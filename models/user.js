@@ -12,10 +12,11 @@ const userSchema = new Schema(
       type: String,
       required: true,
       unique: true,
+      //Mongoose matching validation
       match: [/.+@.+\..+/, 'Must match an email address!'],
     },
     thoughts: [
-      {
+      {// where the thoughts are coming from 
         type: Schema.Types.ObjectId,
         ref: 'Thought',
       },

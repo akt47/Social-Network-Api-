@@ -6,7 +6,7 @@ const thoughtSchema = new Schema(
   {
     thoughtText: {
       type: String,
-      required: 'A thought is required',
+      required: 'thoughts',
       minlength: 1,
       maxlength: 280,
     },
@@ -15,6 +15,7 @@ const thoughtSchema = new Schema(
       default: Date.now,
       get: (timestamp) => moment(timestamp).format('MMM Do, YYYY [at] hh:mm a'),
     },
+    //user creating thought 
     username: {
       type: String,
       required: true,
